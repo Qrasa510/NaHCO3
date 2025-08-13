@@ -1,7 +1,0 @@
-.idea/
-
-venv/
-.venv/
-
-Vocabulary/*
-!Vocabulary/.gitkeep
