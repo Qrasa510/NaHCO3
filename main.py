@@ -53,16 +53,16 @@ def handle_events(chat_id, msg_id, content,content_type):
 
     print(content_type)
     if content_type == "text":
-        #屏蔽词
+        #fuck off 屏蔽词
         if check_and_recall(chat_id, msg_id, content):
             return
-        #bili解析
+        #render fucking bili解析
         bililink(chat_id,content)
-        #gh解析
+        #render fucking gh解析
         githublink(chat_id,content)
-        #ip解析
+        #render fucking ip解析
         geoip(chat_id,content)
-        #gpt reply
+        #gpt reply like shit
         gpt(chat_id,content)
     elif content_type == "image":
         #自动ocr
