@@ -22,15 +22,18 @@ def sendmsg(chat_id, content_type, content, parent="", buttons=None):
             "text": str(content),
             "buttons": buttons
         }
-    elif content_type == "image":
-        data["content"] = {"imageKey": str(content)}# type: ignore
+    elif content_type in ["image", "video", "file"]:
+        data["content"] = {
+            f"{content_type}Key": str(content),
+            "buttons": buttons
+        }# type: ignore
     else:
         data["content"] = {"text": str(content)}
 
     response = requests.post(f"{API_URL}/send?token={TOKEN}", json=data)
     print(response.status_code)
     print(response.json())
-    return
+    return 
 
 
 def uploadimg(chat_id, image_source, from_disk=False):
