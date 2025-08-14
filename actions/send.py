@@ -23,10 +23,10 @@ def sendmsg(chat_id, content_type, content, parent="", buttons=None):
             "buttons": buttons
         }
     elif content_type in ["image", "video", "file"]:
-        data["content"] = {
+        data["content"] = { # type: ignore
             f"{content_type}Key": str(content),
             "buttons": buttons
-        }# type: ignore
+        }
     else:
         data["content"] = {"text": str(content)}
 
